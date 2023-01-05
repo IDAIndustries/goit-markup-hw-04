@@ -56,10 +56,9 @@ body {
   width: 1158px;
 }
 
-.header {
+.header .container {
   display: flex;
   align-items: center;
-  gap: 331px;
 }
 
 .nav {
@@ -119,6 +118,7 @@ body {
   line-height: 1.5;
   color: var(--primary-text-color);
   text-decoration: none;
+  margin-left: auto;
 }
 
 .contacts a {
@@ -150,16 +150,14 @@ body {
     url(../images/herobg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   padding: 192px 0;
   text-align: center;
-  padding-bottom: 120px;
   max-width: 1600px;
 }
 
 .hero-title {
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-bottom: 48px;
+  margin: 0px 300px 48px 300px;
 
   font-weight: 700;
   font-size: 56px;
@@ -413,7 +411,8 @@ body {
   border-color: #404bbf;
 }
 
-.logo-company:hover {
+.customers-link:hover use,
+.customers-link:focus use {
   fill: #404bbf;
 }
 
@@ -442,6 +441,10 @@ body {
 
 .footer {
   background-color: var(--secondary-text-color);
+}
+
+.footer .container {
+  display: flex;
   padding: 100px 0;
 }
 
@@ -450,10 +453,6 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #e7e9fc;
-}
-
-.container.footer {
-  display: flex;
 }
 
 .footer-title {
@@ -472,6 +471,11 @@ body {
 
 .footer-item {
   display: flex;
+}
+
+.footer-social-link {
+  display: flex;
+  fill: var(--secondary-background-color);
   width: 40px;
   height: 40px;
   background: rgba(255, 255, 255, 0.1);
@@ -480,18 +484,14 @@ body {
   align-items: center;
 }
 
-.footer-social-link {
-  display: flex;
-}
-
-.footer-item:hover {
+.footer-social-link:hover,
+.footer-social-link:focus {
   background-color: #31d0aa;
 }
 
 .icon-footer {
   width: 24px;
   height: 24px;
-  fill: var(--secondary-background-color);
 }
 
 /* PORTFOLIO MAIN */
@@ -566,15 +566,23 @@ body {
   border-left: 1px solid #e7e9fc;
   border-right: 1px solid #e7e9fc;
   border-bottom: 1px solid #e7e9fc;
+}
+
+.sample-item-link {
+  display: block;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
-.sample-item:hover {
-  border: 0.5px solid #f4f4fd;
+.sample-item-link:hover,
+.sample-item-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .sample-item {
-  width: 360px;
+  flex-basis: calc((100% - 48px) / 3);
+}
+
+.sample-item-link img {
+  object-fit: cover;
 }
